@@ -8,13 +8,13 @@ metadata:
 spec:
   project: default
   sources:
-    - repoURL: https://github.com/OctopusDeployTesting/frank-samples-argo-cd-gitops
+    - repoURL: https://github.com/eddymoulton/octopus-argo-cd-samples
       targetRevision: HEAD
       path: manifests/update-manifests-yaml-multisource/test/
       name: the-yaml
-    - repoURL: https://github.com/OctopusDeployTesting/frank-samples-argo-cd-gitops
+    - repoURL: https://github.com/eddymoulton/octopus-argo-cd-samples
       targetRevision: HEAD
-      path: manifests/update-manifests-kustomize-octopub/test/  
+      path: manifests/update-manifests-kustomize-octopub/test/
       helm:
         valueFiles:
           - values.yaml
@@ -22,9 +22,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: update-manifests-yaml-multisource-test
   syncPolicy:
-    automated:  
+    automated:
       prune: true
       selfHeal: true
     syncOptions:
-    - Validate=false
-    - CreateNamespace=true
+      - Validate=false
+      - CreateNamespace=true

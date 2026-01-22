@@ -8,16 +8,16 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/OctopusDeployTesting/frank-samples-argo-cd-gitops
+    repoURL: https://github.com/eddymoulton/octopus-argo-cd-samples
     targetRevision: develop
     path: playhq/charts/shared
   destination:
     server: https://kubernetes.default.svc
     namespace: update-manifests-helm-playhq-test
   syncPolicy:
-    automated:  
+    automated:
       prune: true
       selfHeal: true
     syncOptions:
-    - Validate=false
-    - CreateNamespace=true
+      - Validate=false
+      - CreateNamespace=true

@@ -9,14 +9,14 @@ metadata:
 spec:
   project: default
   sources:
-    - repoURL: https://github.com/OctopusDeployTesting/frank-samples-argo-cd-gitops
+    - repoURL: https://github.com/eddymoulton/octopus-argo-cd-samples
       targetRevision: HEAD
       name: helm-source
       path: manifests/update-image-tags-helm-octopub/test/chart
       helm:
         valueFiles:
           - $values/manifests/update-image-tags-helm-octopub/test/values/values.yaml
-    - repoURL: https://github.com/OctopusDeployTesting/frank-samples-argo-cd-gitops
+    - repoURL: https://github.com/eddymoulton/octopus-argo-cd-samples
       targetRevision: HEAD
       ref: values
       name: values-source
@@ -24,9 +24,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: update-image-tags-helm-octopub-test
   syncPolicy:
-    automated:  
+    automated:
       prune: true
       selfHeal: true
     syncOptions:
-    - Validate=false
-    - CreateNamespace=true
+      - Validate=false
+      - CreateNamespace=true

@@ -6,16 +6,16 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/OctopusDeployTesting/frank-samples-argo-cd-gitops
+    repoURL: https://github.com/eddymoulton/octopus-argo-cd-samples
     targetRevision: HEAD
     path: argocd-applications/
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
   syncPolicy:
-    automated:  
+    automated:
       prune: true
       selfHeal: true
     syncOptions:
-    - Validate=false
-    - CreateNamespace=true
+      - Validate=false
+      - CreateNamespace=true

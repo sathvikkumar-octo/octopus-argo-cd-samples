@@ -8,16 +8,16 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/OctopusDeployTesting/frank-samples-argo-cd-gitops
+    repoURL: https://github.com/eddymoulton/octopus-argo-cd-samples
     targetRevision: HEAD
     path: manifests/update-manifests-kustomize-octopub/test/
   destination:
     server: https://kubernetes.default.svc
     namespace: update-manifests-kustomize-octopub-test
   syncPolicy:
-    automated:  
+    automated:
       prune: true
       selfHeal: true
     syncOptions:
-    - Validate=false
-    - CreateNamespace=true
+      - Validate=false
+      - CreateNamespace=true
