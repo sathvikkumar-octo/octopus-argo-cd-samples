@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: productservice
-          image: octopussamples/octopub-products-microservice:1.0.0
+          image: octopussamples/octopub-products-microservice:20260126.966.1
           ports:
             - name: http-product
               containerPort: 8083
