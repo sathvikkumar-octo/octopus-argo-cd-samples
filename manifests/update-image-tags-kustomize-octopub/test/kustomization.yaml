@@ -4,18 +4,14 @@ resources:
 - ../base
 
 patches:
-  - target: 
-      kind: Ingress
-      name: octopub-ingress-products
-    path: octopub-ingress.yaml
   - target:
       kind: Service
-      name: octopub-products-deployment
-    path: octopub-products-deployment.yaml
-  - target:
-      kind: Deployment
       name: octopub-products-service
     path: octopub-products-service.yaml
+  - target:
+      kind: Deployment
+      name: octopub-products-deployment
+    path: octopub-products-deployment.yaml
 
 configMapGenerator:
   - name: product-service-env-vars
