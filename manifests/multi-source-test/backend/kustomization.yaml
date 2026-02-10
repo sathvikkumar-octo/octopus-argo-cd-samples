@@ -6,4 +6,4 @@ resources:
 images:
   - name: octopussamples/octopub-products-microservice
     newName: octopussamples/octopub-products-microservice
-    newTag: "0.1.3"
+    newTag: "0.1.4"
