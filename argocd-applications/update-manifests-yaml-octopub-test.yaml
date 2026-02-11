@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/eddymoulton/octopus-argo-cd-samples
+    repoURL: https://github.com/sathvikkumar-octo/octopus-argo-cd-samples
     targetRevision: HEAD
     path: manifests/update-manifests-yaml-octopub/test/
   destination:
