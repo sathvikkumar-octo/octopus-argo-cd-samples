@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-bad-env-mapping
+  namespace: argocd
+  annotations:
+    argo.octopus.com/project: "update-image-tags-yaml"
+    argo.octopus.com/environment: "non-existent-env"
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/sathvikkumar-octo/octopus-argo-cd-samples
+    targetRevision: HEAD
+    path: manifests/update-image-tags-yaml-octopub/test/
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: test-bad-env-mapping
+  syncPolicy:
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true

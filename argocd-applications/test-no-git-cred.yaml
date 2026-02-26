@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-no-git-cred
+  namespace: argocd
+  annotations:
+    argo.octopus.com/project: "update-image-tags-yaml"
+    argo.octopus.com/environment: "test"
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/some-org/no-matching-credential-repo
+    targetRevision: HEAD
+    path: manifests/
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: test-no-git-cred
+  syncPolicy:
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true
