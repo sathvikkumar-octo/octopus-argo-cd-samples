@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: octopussamples/octopub-frontend:20260227.528.1
+          image: octopussamples/octopub-frontend:20260227.529.1
           ports:
             - containerPort: 8080
               name: http-port
