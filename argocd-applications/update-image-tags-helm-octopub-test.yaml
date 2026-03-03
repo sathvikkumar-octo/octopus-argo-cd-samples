@@ -9,14 +9,15 @@ metadata:
 spec:
   project: default
   sources:
-    - repoURL: https://github.com/eddymoulton/octopus-argo-cd-samples
+    - repoURL: https://github.com/sathvikkumar-octo/octopus-argo-cd-samples
       targetRevision: HEAD
       name: helm-source
       path: manifests/update-image-tags-helm-octopub/test/chart
       helm:
         valueFiles:
           - $values/manifests/update-image-tags-helm-octopub/test/values/values.yaml
-    - repoURL: https://github.com/eddymoulton/octopus-argo-cd-samples
+          - $values/manifests/update-image-tags-helm-octopub/test/values/values-extra.yaml
+    - repoURL: https://github.com/sathvikkumar-octo/octopus-argo-cd-samples
       targetRevision: HEAD
       ref: values
       name: values-source

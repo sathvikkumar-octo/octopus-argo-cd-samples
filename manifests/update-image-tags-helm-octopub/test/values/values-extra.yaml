@@ -1,0 +1,8 @@
+# Extra configuration values - no image references here
+replicaCount: 1
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
